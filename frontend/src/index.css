@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.navbar-brand {
+    font-size: 12pt !important;
+}
+
+.navbar-brand-button {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.portfolio {
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.portfolio.selected {
+    background-color: #eff2f5;
+}
+
+.portfolio div {
+    font-size: 18px;
+}
+
+.portfolio span {
+    font-size: 16px;
+    color: #58667e;
+}
+
+.modal_portfolio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_portfolio > .MuiBox-root {
+    width: 35%;
+    height: 35%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3%;
+    border-radius: 20px;
+}
+
+.modal_portfolio > .MuiBox-root .MuiTextField-root {
+    width: 70%
+}
