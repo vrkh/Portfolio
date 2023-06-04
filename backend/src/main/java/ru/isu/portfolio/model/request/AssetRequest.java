@@ -10,6 +10,7 @@ import lombok.ToString;
 public class AssetRequest {
     String name;
     String short_name;
+    String symbol;
     String isin;
     String about;
     Integer lot_size;

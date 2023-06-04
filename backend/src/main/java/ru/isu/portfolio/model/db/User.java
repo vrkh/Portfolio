@@ -74,6 +74,6 @@ public class User implements UserDetails {
     public User(String username, String password) {
         this.username = username;
         this.password = password;
-        this.total = 0D;
+        this.total = 0d;
     }
 }

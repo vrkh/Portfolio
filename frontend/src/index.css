@@ -36,6 +36,12 @@ code {
     background-color: #eff2f5;
 }
 
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5%;
+}
+
 .portfolio div {
     font-size: 18px;
 }
@@ -61,6 +67,10 @@ code {
     justify-content: space-around;
     gap: 3%;
     border-radius: 20px;
+}
+
+.modal_portfolio_transaction > .MuiBox-root {
+    height: 60%;
 }
 
 .modal_portfolio > .MuiBox-root .MuiTextField-root {

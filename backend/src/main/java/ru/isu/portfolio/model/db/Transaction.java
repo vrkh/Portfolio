@@ -1,5 +1,6 @@
 package ru.isu.portfolio.model.db;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,6 +22,7 @@ public class Transaction {
 
     @ManyToOne
     @JoinColumn(name = "portfolio_asset_id")
+    @JsonIgnore
     private PortfolioAsset portfolioAsset;
 
     @Column(name = "vector")
@@ -49,6 +51,12 @@ public class Transaction {
         this.vector = vector;
         this.lotCount = lotCount;
         this.price = price;
+
+        if (!getVector()) {
+            this.lotCount *= -1;
+            this.price *= -1;
+        }
+
         this.fee = fee;
         this.note = note;
         this.date = date;

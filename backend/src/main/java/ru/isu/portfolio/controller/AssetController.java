@@ -29,13 +29,8 @@ public class AssetController {
     CurrencyRepository currencyRepository;
     @Autowired
     ExchangeRepository exchangeRepository;
-
-//    @GetMapping("/asset/getAllByUserID/{userId}")
-//    public ResponseEntity<List<Portfolio>> getAllByUser(@PathVariable("userId") Long user_id) {
-//        List<Portfolio> portfolios = mainRepository.findPortfoliosByUserId(user_id);
-//        return ResponseEntity.ok(portfolios);
-//    }
-
+    @Autowired
+    PortfolioAssetRepository portfolioAssetRepository;
 
     @GetMapping("/asset/getAll")
     public ResponseEntity<List<Asset>> getAll() {
@@ -59,7 +54,7 @@ public class AssetController {
         Currency currency = currencyRepository.getOne(request.getCurrency_id());
         Exchange exchange = exchangeRepository.getOne(request.getExchange_id());
 
-        Asset asset = new Asset(request.getName(), request.getShort_name(), request.getLot_size(), request.getIsin(), request.getAbout(), country, exchange, board, currency);
+        Asset asset = new Asset(request.getName(), request.getShort_name(), request.getSymbol(), request.getLot_size(), request.getIsin(), request.getAbout(), country, exchange, board, currency);
 
         mainRepository.save(asset);
         return ResponseEntity.noContent().build();

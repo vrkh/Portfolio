@@ -13,6 +13,5 @@ public interface PortfolioAssetRepository extends JpaRepository<PortfolioAsset, 
     boolean existsByAssetIdAndPortfolioId(Long asset_id, Long portfolio_id);
 
     PortfolioAsset findByAssetIdAndPortfolioId(Long asset_id, Long portfolio_id);
-
     List<PortfolioAsset> findPortfolioAssetsByPortfolioId(Long portfolio_id);
 }

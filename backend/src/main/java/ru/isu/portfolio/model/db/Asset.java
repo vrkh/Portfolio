@@ -20,6 +20,9 @@ public class Asset {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "symbol")
+    private String symbol;
+
     @Column(name = "short_name")
     private String shortName;
 
@@ -48,9 +51,10 @@ public class Asset {
     @JoinColumn(name = "currency_id")
     private Currency currency;
 
-    public Asset(String name, String shortName, Integer lotSize, String isin, String about, Country country, Exchange exchange, Board board, Currency currency) {
+    public Asset(String name, String shortName, String symbol, Integer lotSize, String isin, String about, Country country, Exchange exchange, Board board, Currency currency) {
         this.name = name;
         this.shortName = shortName;
+        this.symbol = symbol;
         this.lotSize = lotSize;
         this.isin = isin;
         this.about = about;

@@ -1,11 +1,14 @@
 package ru.isu.portfolio.model.db;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "portfolio_asset")
@@ -13,7 +16,6 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 public class PortfolioAsset {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -37,6 +39,9 @@ public class PortfolioAsset {
     @Column(name = "avg_price")
     @ColumnDefault("0")
     private Double avg_price;
+
+    @OneToMany(mappedBy = "portfolioAsset", fetch = FetchType.EAGER)
+    private List<Transaction> transactions;
 
     public PortfolioAsset(Portfolio portfolio, Asset asset) {
         this.portfolio = portfolio;
